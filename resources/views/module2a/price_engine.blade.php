@@ -34,30 +34,46 @@
             // }
 
             if ($size == 'L') {
-                 $finalPrice = $finalPrice + 1.75;}
+                 $finalPrice = $finalPrice + 1.75;
+                 $details .= "<li>Size Upcharge (L): <span>+$1.75</span></li>";
+            }
             if ($size == 'XL') {
-                 $finalPrice = $finalPrice + 2.50;}             
-            if ($color=='Sunset Orange'){
+                 $finalPrice = $finalPrice + 2.50; 
+                 $details .= "<li>Size Upcharge (XL): <span>+$2.50</span></li>";            
+            }
+                 if ($color=='Sunset Orange'){
                 $finalPrice = $finalPrice + 2;
+                $details .= "<li>Color Upcharge: <span>+$2.00</span></li>";
             }
             if ($color=='Ocean Blue'){
                 $finalPrice = $finalPrice + 2;
-            }
+                $details .= "<li>Color Upcharge: <span>+$2.00</span></li>";
+                }
+
             
             if ($isCustomized==true){
                if ($size == 'XL'){
                 $finalPrice = $finalPrice + 3;
+                $details .="<li>Additional upcharge Customization size XL: <span>+$3.00</span></li>";
             } 
                 $finalPrice = $finalPrice + 5;
+                $details .= "<li>Customization upcharge: <span>+$5.00</span></li>";
             }
+
             if (strlen($customerFirstName)>6){
                 $finalPrice = $finalPrice -1;
+                $details .= "<li>Long name discount: <span>$1.00</span></li>";
             }
 
 
             // --- DO NOT EDIT BELOW THIS LINE ---
             echo "<ul>" . $details . "</ul>";
             echo "<ul><li><span class='total'>Final Price:</span> <span class='total'>$" . number_format($finalPrice, 2) . "</span></li></ul>";
+
+/*
+MY DEBUGGING LOG:
+added changes to details variable for each price update after writing if statements, this caused some typos, I put some of them outside the brackets so a charge would be added to the list without the if condition being met, it was easy to spot  on the web page since the charges on the list didn't match the options tested but the final price did. 
+*/
 
         ?>
     </div>

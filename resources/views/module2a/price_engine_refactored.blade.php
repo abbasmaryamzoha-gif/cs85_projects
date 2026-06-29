@@ -52,16 +52,21 @@
             
             if ($isCustomized && $size == 'XL'){
                 $finalPrice = $finalPrice + 8;
-                 $details .= "<li>Customization upcharge (XL): <span>+$8.00</span></li>";
+                $details .= "<li>Customization upcharge: <span>+$5.00</span></li>";
+                $details .= "<li>Additional upcharge Customization size XL: <span>+$3.00</span></li>";
             }
             elseif ($isCustomized){
                 $finalPrice = $finalPrice + 5;
-                $details .= "<li>Customization upcharge (non XL): <span>+$5.00</span></li>";
+                $details .= "<li>Customization upcharge: <span>+$5.00</span></li>";
             }
             if (strlen($customerFirstName)>6){
                 $finalPrice = $finalPrice -1;
                 $details .= "<li>Long name discount: <span>+$1.00</span></li>";
             }
+
+        /*
+        
+        */
 
 
             // --- DO NOT EDIT BELOW THIS LINE ---
