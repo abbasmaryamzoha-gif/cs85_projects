@@ -65,8 +65,9 @@
             }
 
         /*
-        
-        */
+MY DEBUGGING LOG:
+added changes to details variable for each price update after writing if statements, this caused some typos, I put some of them outside the brackets so a charge would be added to the list without the if condition being met, it was easy to spot  on the web page since the charges on the list didn't match the options tested but the final price did. 
+*/
 
 
             // --- DO NOT EDIT BELOW THIS LINE ---
